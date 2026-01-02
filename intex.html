@@ -1,0 +1,1725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya Library </title>
+    <link rel="stylesheet" href="https://unpkg.com/@latest/dlucideist/umd/lucide.js">
+    <style>
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-dark: #1d4ed8;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --green-500: #10b981;
+            --red-500: #ef4444;
+            --yellow-400: #fbbf24;
+            --blue-50: #eff6ff;
+            --blue-100: #dbeafe;
+            --blue-200: #bfdbfe;
+            --blue-600: #2563eb;
+            --indigo-100: #e0e7ff;
+            --indigo-200: #c7d2fe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+        }
+
+        #mainlogo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 55px;
+            width: 100px;
+            background-color: #1d4ed8;
+            border: solid #1d4ed8;
+            overflow: hidden;
+            border-radius: 20px 120px / 120px;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+
+
+        /* Navigation Styles */
+
+        #nav-name {
+            color: #1d4ed8;
+
+        }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--gray-200);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--gray-900);
+        }
+
+        .nav-brand h1 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .nav-links {
+        
+            display:none;
+           align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--gray-700);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+            background: var(--gray-50);
+        }
+
+        .btn-lg {
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+            padding: 1rem 0;
+            border-top: 1px solid var(--gray-200);
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--blue-50) 0%, var(--indigo-100) 100%);
+            padding: 3rem ;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            
+        }
+
+        .hero-text .highlight {
+            color: var(--primary-blue);
+            
+        }
+
+        .hero-text p {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+
+        #n-r {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50%;
+            word-spacing: 20px;
+            font-weight: 800;
+            color: #f3f0f0;
+            background-color: #841dd8;
+            border-radius: 20px;
+        }
+
+        #n-r:hover{
+            background-color: rgb(69, 17, 129);
+            
+          
+             
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-stats {
+           
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            padding-top: 2rem;
+           
+        }
+
+        .stat {
+            
+            display: grid;
+             align-items: center;
+             justify-content: center;
+            height: 100px;
+            width: 170px;
+           background-color: #dadef0;
+           border: 1px solid white;
+           border-radius: 15px;
+           margin: 2px;  
+        }
+       
+        #stats :hover {
+            background-color: white;
+        }
+
+        #stats{
+            
+             display: grid;
+             align-items: center;
+             justify-content: center;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .hero-image {
+
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-video {
+            margin: 0% 25% 0% 25%;
+            height: auto;
+            width: auto;
+            border-radius: 20px;
+            overflow: hidden;
+          
+            
+        }  
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.25rem;
+
+            color: var(--gray-600);
+            max-width: 48rem;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 2px solid var(--gray-200);
+            border-radius: 0.5rem;
+
+            padding: 2rem;
+            text-align: center;
+            transition: border-color 0.3s;
+
+        }
+
+        .service-card:hover {
+            border-color: var(--blue-200);
+        }
+
+        .service-icon {
+            width: 4rem;
+            height: 4rem;
+            background: var(--blue-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+
+
+            background: var(--blue-200);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray-600);
+        }
+
+        /* Catalog Section */
+        .catalog {
+            padding: 5rem 0;
+            background: var(--gray-50);
+        }
+
+        .books-grid {
+
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+
+        .book-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .book-image {
+            position: relative;
+        }
+
+        .book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+
+        }
+
+        .book-badge {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-available {
+            background: var(--green-500);
+            color: white;
+        }
+
+        .badge-unavailable {
+            background: var(--red-500);
+            color: white;
+        }
+
+        .book-content {
+            padding: 1.5rem;
+        }
+
+        .book-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .book-author {
+            color: var(--gray-600);
+            margin-bottom: 1rem;
+        }
+
+        .book-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .star {
+            color: var(--yellow-400);
+            fill: currentColor;
+
+        }
+
+        .category-badge {
+            padding: 0.25rem 0.5rem;
+            background: var(--gray-100);
+            border: 1px solid var(--gray-300);
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+        }
+
+        .book-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .book-actions .btn {
+            flex: 1;
+        }
+
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+
+        #view-all-books{
+            text-align: center;
+        } 
+
+        #view-all-books :hover{
+              
+            color: white;
+            background-color: #1d4ed8;
+            box-shadow: 10px 5px 8px rgb(8, 8, 8);
+        }
+
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            margin: 2rem;
+
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 3rem;
+            height: 3rem;
+            background: var(--blue-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--gray-600);
+        }
+
+        .map-placeholder {
+            background: white;
+            height: 16rem;    
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--gray-500);
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--gray-300);
+            border-radius: 0.375rem;
+            font-size: 1rem;
+        }
+
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 6rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-900);
+            color: white;
+            padding: 4rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: var(--gray-400);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--gray-400);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links svg {
+            color: var(--gray-400);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .social-links svg:hover {
+            color: var(--primary-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--gray-800);
+            margin-top: 3rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray-400);
+        }
+
+        /* Modal Styles */
+        .modal {
+
+
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 100;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 2rem;
+            width: 90%;
+            max-width: 28rem;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .tabs {
+            margin-bottom: 1.5rem;
+        }
+
+        .tab-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--gray-100);
+            border-radius: 0.375rem;
+            padding: 0.25rem;
+        }
+
+        .tab-button {
+            padding: 0.5rem 1rem;
+            background: none;
+            border: none;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .tab-button.active {
+            background: white;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-content {
+             display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+
+            .hero-stats {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 922px) {
+            .nav-links {
+
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3.75rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .books-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="nav-brand">
+                    <div id="mainlogo"><img src="imags/LOGO.webp" height="50PX" width="80PX" alt=""></div>
+
+                    <div id="nav-name">
+                        <h1> Divya Library </h1>
+                    </div>
+                </a>
+
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#catalog">Books</a>
+                   
+                    <a href="#contact">Contact</a>
+                    <button class="btn btn-outline" style=" color: white; background-color: #3442c2;" onclick="openAuthModal()">Sign In</button>
+                </div>
+
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" x2="20" y1="6" y2="6" />
+                        <line x1="4" x2="20" y1="12" y2="12" />
+                        <line x1="4" x2="20" y1="18" y2="18" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="#home">Home</a>
+                <a href="#catalog">Books</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+                <button class="btn-lg btn-primary" style="border: white; border-radius: 20px;" onclick="openAuthModal()">Sign in </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Welcome to <span class="highlight" style="text-shadow: 3px 3px 3px  #101010;"><br>Divya
+                            Library</span></h1>
+                    <p>Your gateway to knowledge and learning. Discover thousands of books, digital resources, and quiet
+                        study spaces in our modern library.
+                    </p>
+                    <P id="n-r">NEWEST LIBRARY</P>
+
+
+                    <div class="hero-buttons">
+                        <a href="#catalog" class="btn btn-primary btn-lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M2 3h6l4 2.5L16 3h6v18H2z" />
+                                <path d="M2 12h6l4 2.5L16 12h6" />
+                            </svg>
+                            Browse Catalog
+                        </a>
+                        <button class="btn btn-outline btn-lg" onclick="openAuthModal()">Get Library Card</button>
+                    </div>
+
+                    <div class="hero-stats">
+                      <div id="stats">
+                            <div class="stat">
+                                <div class="stat-number">100+</div>
+                                <div class="stat-label">Books</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">1,200+</div>
+                                <div class="stat-label">Members</div>
+                             </div>
+                        </div>
+                        <div id="stats" >
+                            <div class="stat">
+                                <div class="stat-number">24 Hours</div>
+                                <div class="stat-label">Daily Open </div>
+                             </div>
+                            <div class="stat">
+                                 <div class="stat-number"> since 2+</div>
+                                 <div class="stat-label">Years</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+          <!-- full-logo -->
+                <div class="hero-image">
+                    <img src="imags/FULLOGO.webp" alt="Modern Library Interior">
+                </div>
+
+            </div>
+            <br>
+            <br>
+         <!-- logo-video -->
+            <div class="logo-video">
+                <video src="logo video.mp4" height="100%" width="100%" autoplay loop muted></video>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 style=" text-shadow: 3px 3px 3px  #853e60;">Library Services</h2>
+                <hr>
+                <p style="font-weight: 500;"> Discover all the resources and amenities we offer to enhance your learning
+                    experience</p>
+            </div>
+
+            <div class="services-grid">
+
+                 <div class="service-card">
+                    <div class="service-icon">
+                        <img style=  "border-radius: 50%; " src="imags/ac-img.jpg"
+                            height="100%" width="100%">
+                    </div>
+                    <h3>A.C.</h3>
+                    <p>Comfortable Air-Conditioned Environment </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style="border-radius: 50%;" src="imags/wi-fi image.png"
+                            height="100%">
+                    </div>
+                    <h3>Free WiFi</h3>
+                    <p>High-speed internet access throughout the library premises</p>
+                </div>
+                 
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style=  "border-radius: 50%; " src="imags/parking-img.webp"
+                            height="100%" width="100%">
+                    </div>
+                    <h3>PARKING</h3>
+                    <p> Safe and convenient parkig space for visitors  </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style=  "border-radius: 50%; " src="imags/news paper-img.webp"
+                            height="100%" >
+                    </div>
+                    <h3>NEWS-PAPER</h3>
+                    <p> Daily Newspapers to keep you updated with current affairs  </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style=  "border-radius: 50%; " src="imags/silent-img.webp"
+                            height="100%" >
+                    </div>
+                    <h3>SILENT ZONE </h3>
+                    <p> Dedicated silent area for undisturbed study and concentration  </p>
+                </div>
+
+                 <div class="service-card">
+                    <div class="service-icon">
+                        <img src="imags/chargeing point-img.jpg" width="100%" height="100%"
+                             style="border-radius: 50%;" alt="">
+                    </div>
+                    <h3>CHARGING POINTS  </h3>
+                    <p>Charging points for your Mobile / Laptop / tablet any other devices  </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="imags/study table-img.webp" width="100%" height="100%"
+                             style="border-radius: 50%;" alt="">
+                    </div>
+                    <h3> STUDY CABIN   </h3>
+                    <p>peaceful study space and separate cabin GIRL'S and  BOY'S </p>
+                </div>
+
+                 <div class="service-card">
+                    <div class="service-icon">
+                        <img src="imags/cctv-img.jpg" width="100%" height="100%"
+                             style="border-radius: 50%;" alt="">
+                    </div>
+                    <h3>C.C.T.V. SURVEILLANCE  </h3>
+                    <p>24x7 CCTV monitoring for security and safety </p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="imags/books image.webp" height="100%"
+                            width="100%" style="border-radius: 50%;" alt="">
+                    </div>
+                    <h3>Book Collection</h3>
+
+                    <p>Access to over 100 books across all genres and academic subjects</p>
+                </div>
+
+                 <div class="service-card">
+                    <div class="service-icon">
+                        <img src="imags/RO-img.jpg" height="100%"
+                            width="100%" style="border-radius: 50%;" alt="">
+                    </div>
+                    <h3>R.O. WATER</h3>
+
+                    <p>Clean and chilled RO drinking water available for all members </p>
+                </div>
+
+                
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img src="imags\gegits.webp" height="100%" width="100%" alt="gejits" style="  border-radius: 50%;">
+                    </div>
+                    <h3>Digital Resources</h3>
+                    <p>E-books, online databases, and digital archives available 24/7</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style="border-radius: 50%;" src="imags/study space.webp" height="100%" width="100%">
+                    </div>
+                    <h3>Study Spaces</h3>
+                    <p>Quiet individual study areas and collaborative group rooms</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style="border-radius: 50%;" src="imags/reading cefe.webp" height="100%" width="100%">
+                    </div>
+                    <h3>Reading Café</h3>
+                    <p>Relaxing café space with beverages and light refreshments</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <img style="border-radius: 50%;"
+                            src="imags/headPhone.webp"
+                            height="100%" width="100%">
+                    </div>
+                    <h3>Audio Collection</h3>
+                    <p>Audiobooks, music, and multimedia learning resources</p>
+                </div>
+
+                    <div class="book-card" >
+                        <div id="view-all-books" style="height: 200px; display: flex; align-items: center; justify-content: center; border: 1px solid #f0ecec; ">
+                            <button class=" btn btn-outline btn-lg">View All Services </button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="catalog">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Books</h2>
+                <p style="font-weight: 500;">Discover our most popular and recently added books</p>
+            </div>
+
+            <div class="books-grid">
+                <div class="book-card">
+                    <div class="book-image">
+                        <a href="EC PDF.pdf"> <img src="imags\jee main physies.webp" height=" 100%" width="100%" alt="The Great Gatsby"></a>
+                        
+                        <div class="book-badge badge-available">Available</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title"> PHYSICS JEE-2026 PYQ</h3>
+                        <p class="book-author">ARIHANT
+                        <p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>4.5</span>
+                            </div>
+                            <div class="category-badge">ONLY PYQ BOOK</div>
+
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="imags\jee main chemistry.webp" height=" 100%" width="100%">
+                        <div class="book-badge badge-available">Available</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">CHEMISTRY JEE-2026 PYQ</h3>
+                        <p class="book-author">ARIHANT</p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>4.8</span>
+                            </div>
+                            <div class="category-badge">ONLY PYQ BOOK</div>
+
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="imags\jee main maths.webp" height=" 100%" width="100%" alt="MATHEMATICS JEE BOOK ">
+                        <div class="book-badge badge-available">Available</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">MATHEMATICS JEE-2026 PYQ</h3>
+                        <p class="book-author">ARIHANT</p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>4.3</span>
+                            </div>
+                            <div class="category-badge">ONLY PYQ BOOK</div>
+
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="imags\neet-biology.webp" alt="BIOLOGY NEET PYQ BOOK 2025-2026">
+                        <div class="book-badge badge-available">Available</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">BIOLOGY NEET PYQ BOOK 2025-2026 </h3>
+                        <p class="book-author">ARIHANT</p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>4.7</span>
+                            </div>
+                            <div class="category-badge">ONLY PYQ BOOK</div>
+
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="imags\neet-physics.webp" alt="PHYSICS NEET PYQ BOOK 2025-2026">
+                        <div class="book-badge badge-available">Available</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title"> PHYSICS NEET PYQ BOOK 2025-2026 </h3>
+                        <p class="book-author">ARIHANT</p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>4.9</span>
+                            </div>
+                            <div class="category-badge">ONLY PYQ BOOK</div>
+
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="imags\neet-chemistry.webp" alt="NEET-CHEMISTRY BOOK">
+                        <div class="book-badge badge-available">Available</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title"> CHEMISTRY NEET PYQ BOOK 2025-2026 </h3>
+                        <p class="book-author">ARIHANT</p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>4.8</span>
+                            </div>
+                            <div class="category-badge">ONLY PYQ BOOK</div>
+
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="book-card">
+                    <div class="book-image">
+                        <img src="imags\other books.jpg" height=" 100%" width="100%" alt="other books">
+                        <div class="book-badge badge-unavailable">Checked Out</div>
+
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Prejudice</h3>
+                        <p class="book-author">Jane Austen</p>
+                        <div class="book-meta">
+                            <div class="rating">
+                                <svg class="star" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <polygon
+                                        points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                                </svg>
+                                <span>3.6</span>
+                            </div>
+                            <div class="category-badge">knowledge test</div>
+                        </div>
+                        <div class="book-actions">
+                            <button class="btn btn-primary btn-sm">Reserve</button>
+                            <button class="btn btn-outline btn-sm">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="book-card">
+
+
+                    <div id="view-all-books">
+                        <button class="btn  btn-outline btn-lg">View All Books</button>
+                    </div>
+                </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions? We're here to help you make the most of your library experience</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="color: var(--primary-blue);">
+                                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>Vatika Road , Near ke Chohraye ke Pass, <br>
+                                Sanganer, jaipur 303905 , Rajasthan , India </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="color: var(--primary-blue);">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <p>+91 8058251025 , +91 9667265966</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="color: var(--primary-blue);">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <p>divyalibrary@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" style="color: var(--primary-blue);">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12,6 12,12 16,14" />
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Hours</h4>
+                            <p>Sunday : 5:00 AM - 11:00 PM<br>
+                                Monday : 5:00 AM - 11:00 PM<br>
+                                Tuesday : 5:00 AM - 11:00 PM<br>
+                                Wednesday : 5:00 AM - 11:00 PM<br>
+                                Thursday : 5:00 AM - 11:00 PM<br>
+                                Friday : 5:00 AM - 11:00 PM<br>
+                                Sunday : 5:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="map-placeholder"><iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d722169.8323739216!2d75.65277439468629!3d26.8939628187422!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396dc9924f9fb9eb%3A0xcb04447088e90a83!2sDivya%20Library!5e0!3m2!1sen!2sin!4v1754824359892!5m2!1sen!2sin" width="500" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                </div>
+
+                <div class="contact-form">
+                    <h2 style="text-align: center;">Send us a Message</h2>
+                    <br>
+                    <form onsubmit="submitContactForm(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Enter your first name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Enter your last name"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="number">Phone Number</label>
+                            <input type="number" id="number" name="number" placeholder="Enter your phone number" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="What is this regarding?"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us how we can help you..." rows="6"
+                                required></textarea>
+                        </div>
+
+
+                        <button type="submit" class="btn-lg btn-primary" style=" border: #ecedf0; border-radius: 20px; width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" style="color: #60a5fa;">
+                            <path d="M2 3h6l4 2.5L16 3h6v18H2z" />
+                            <path d="M2 12h6l4 2.5L16 12h6" />
+                        </svg>
+                        <h2>Divya Library</h2>
+                    </div>
+                    <p>Your gateway to knowledge and learning. Serving the community with quality resources and services
+                        since 2023.</p>
+                    <div class="social-links">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+
+                        </svg>
+
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#catalog">Catalog</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#learning">Learning</a></li>
+                        <li><a href="#Customers">Customers</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">➡️ Air Conditioner</a></li>
+
+                        <li><a href="#">➡️ High SPEED 5G Free Wi-FI</a></li>
+                        <li><a href="#">➡️ R.O. Water</a></li>
+                        <li><a href="#">➡️ Book Reservation</a></li>
+
+                        <li><a href="#">➡️ Laptop / Mobile / Any Other Study <br> Gadgets Charging Point</a></li>
+                        <li><a href="#">➡️ Digital Resources</a></li>
+                        <li><a href="#"> ➡️ Silent Zone</a></li>
+                        <li><a href="#"> ➡️ C.C.T.V. </a></li>
+                        <li><a href="#">➡️ Peaceful Study Space And Separate <br> Cabins Girl's / Boy's</a></li>
+                        <li><a href="#"> ➡️ Study Cabins</a></li>
+                        <li><a href="#"> ➡️ Hindi /English Any Newspapers </a></li>
+                        <li><a href="#">➡️ Research Assistance</a></li>
+                        <li><a href="#"> ➡️ Vehicle Full Space Parking with CCTV</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <div style="color: var(--gray-400);">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            <span>+91 8058251025 , 9667265966 </span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg>
+                            <span>divyalibrary@gmail.com</span>
+                        </div>
+                        <div>
+                            <p style="font-size: 0.875rem;">
+                                Vatika Road , Near ke Chohraye ke Pass, <br>
+                                Sanganer, jaipur 303905 , Rajasthan , India
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Divya Library. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeAuthModal()">&times;</button>
+            <h1> <i> Welcome to Divya Library </i></h1>
+
+            <div class="tabs">
+                <div class="tab-buttons">
+                    <button class="tab-button active" onclick="switchTab('signin')">Sign In</button>
+                    <button class="tab-button" onclick="switchTab('signup')">Sign Up</button>
+                </div>
+
+                <div id="signin" class="tab-content active">
+                    <form onsubmit="handleSignIn(event)">
+                        <div class="form-group">
+                            <label for="signinEmail">Email</label>
+                            <input type="email" id="signinEmail" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signinPassword">Password</label>
+                            <input type="password" id="signinPassword" name="password" placeholder="Enter your password"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Sign In</button>
+                    </form>
+                </div>
+
+                <div id="signup" class="tab-content">
+                    <form onsubmit="handleSignUp(event)">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" name="password" placeholder="Create a password"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Auth Modal Functions
+        function openAuthModal() {
+            document.getElementById('authModal').classList.add('active');
+        }
+
+        function closeAuthModal() {
+            document.getElementById('authModal').classList.remove('active');
+        }
+
+        // Tab Switching
+        function switchTab(tabName) {
+            // Remove active class from all tab buttons and contents
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Add active class to clicked tab button
+            event.target.classList.add('active');
+
+            // Show corresponding tab content
+            document.getElementById(tabName).classList.add('active');
+        }
+
+        // Form Handlers
+        function handleSignIn(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const email = formData.get('email');
+            const password = formData.get('password');
+
+            alert(`Sign In attempted with email: ${email}`);
+            closeAuthModal();
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const fullName = formData.get('fullName');
+            const email = formData.get('email');
+
+            alert(`Account created for: ${fullName} (${email})`);
+            closeAuthModal();
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const firstName = formData.get('firstName');
+            const lastName = formData.get('lastName');
+            const subject = formData.get('subject');
+
+            alert(`Message sent from: ${firstName} ${lastName}\nSubject: ${subject}`);
+            event.target.reset();
+        }
+
+        // Smooth Scrolling for Navigation Links
+        document.addEventListener('DOMContentLoaded', function () {
+            const links = document.querySelectorAll('a[href^="#"]');
+
+            links.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        targetSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                    }
+                });
+            });
+
+            // Close modal when clicking outside
+            document.getElementById('authModal').addEventListener('click', function (e) {
+                if (e.target === this) {
+                    closeAuthModal();
+                }
+            });
+        });
+
+        // Add some interactive features for book reservation
+        document.addEventListener('DOMContentLoaded', function () {
+            const reserveButtons = document.querySelectorAll('.book-actions .btn-primary');
+
+            reserveButtons.forEach(button => {
+                if (!button.disabled) {
+                    button.addEventListener('click', function () {
+                        const bookCard = this.closest('.book-card');
+                        const bookTitle = bookCard.querySelector('.book-title').textContent;
+
+                        if (confirm(`Would you like to reserve "${bookTitle}"?`)) {
+                            alert(`"${bookTitle}" has been reserved for you!`);
+                            this.textContent = 'Reserved';
+                            this.disabled = true;
+                            this.style.backgroundColor = '#10b981';
+
+                            // Update badge
+                            const badge = bookCard.querySelector('.book-badge');
+                            badge.textContent = 'Reserved';
+                            badge.className = 'book-badge badge-available';
+                            badge.style.backgroundColor = '#10b981';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
